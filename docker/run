@@ -1,0 +1,5 @@
+#!/usr/bin/with-contenv bash
+
+sed -i 's/127.0.0.11/127.0.0.1/g'  /etc/nginx/conf.d/include/resolvers.conf
+
+exec dnsmasq -k

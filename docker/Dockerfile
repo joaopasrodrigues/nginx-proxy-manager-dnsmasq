@@ -3,9 +3,10 @@
 
 # This file assumes that the frontend has been built using ./scripts/frontend-build
 
-FROM --platform=${TARGETPLATFORM:-linux/amd64} jc21/nginx-proxy-manager:latest
+FROM  jc21/nginx-proxy-manager:latest
 
 WORKDIR /
+RUN apk update 
 RUN apk add dnsmasq
 RUN mkdir -p /etc/services.d/dnsmasq
 COPY run /etc/services.d/dnsmasq
