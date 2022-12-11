@@ -6,8 +6,8 @@
 FROM  jc21/nginx-proxy-manager:latest
 
 WORKDIR /
-RUN apk update 
-RUN apk add dnsmasq
+RUN apt-get update
+RUN apt-get -y install dnsmasq
 RUN mkdir -p /etc/services.d/dnsmasq
 COPY run /etc/services.d/dnsmasq
 RUN ln -s /bin/true /etc/services.d/dnsmasq/finish 
